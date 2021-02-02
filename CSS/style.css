@@ -18,12 +18,14 @@ body {
     justify-content: flex-end;
     margin-left: 10%;
     Margin-right: 10%;
+    line-height: auto;
     Color: lightslategray;
     font-size: 50px;
 }
 .button-nav {
     padding: 2px 30px;
     margin: 100px;
+    line-height: 1mm;
     font-size: 20px;
     color:  lightslategray;
     height: 2%;
@@ -40,7 +42,7 @@ body {
     padding-top: 10px 30px;
     margin-left: 2cm;
     text-align: center;
-  }
+    }
     
 .container {
     background-color: #ffffff;
@@ -50,33 +52,37 @@ body {
       }
 
 .grid-item{
-
-    background-color: rgb(119, 136, 153);
+    border-radius: 25px;
+    border: 3px solid rgb(119, 136, 153);
     width: 400px;
     margin: 10px;
     text-align: center;
     line-height: 400px;
-    font-size: 40px;
+    font-size: 40px; 
+    flex-wrap: wrap;
+    color: rgb(119, 136, 153);
 
   @media screen and (max-width: 420px)}
 
 .container1  {
   border: 1px solid #fffdfd;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   padding: 200px;
   /* border-radius: 24px; */
 }
-/* .container2  {
+.container2  {
   border: 1px solid #bdbdbd;
   padding: 24px;
   border-radius: 24px;
+
 }
 .container3  {
   border: 1px solid #bdbdbd;
   padding: 24px;
   border-radius: 24px;
-} */
+}
 .label1 {
   font-size: 36px;
   border: 1px solid #bdbdbd;
@@ -84,7 +90,6 @@ body {
 }
 .label2 {
   font-size: 36px;
-  justify-content: flex-end;
   border: 1px solid #bdbdbd;
   width: auto;
 }
@@ -94,58 +99,88 @@ body {
   border: 1px solid #bdbdbd;
   width: auto;
 }
-
-/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
-.icon-bar {
-  position: fixed;
-  top: 80%;
-  /* -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
+*{ 
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-
-/* Style the icon bar links */
-.icon-bar a {
-  display: block;
+ul {
+  display: flex;
   text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 20px;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-/* Style the social media icons with color, if you want */
-.icon-bar a:hover {
-  background-color: #000;
-}
-
-.facebook {
-   background: #3B5998;
-  color: white;
-}
-
-.twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.linkedin {
-  background: #007bb5;
-  color: white;
-}.icon-bar {
-  position: fixed;
-  top: 50px; 
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-/* Style the icon bar links */
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 20px;
+ul li {
+  position: relative;
+  background: white;
+  width: 90px;
+  height: 90px;
+  margin: 0 20px;
+  border: 3px solid;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: .5s;
+  overflow: hidden;
   }
+
+ul li .fab{
+  font-size: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+}
+ul li:nth-child(1){
+  border-color:lightslategrey;
+}
+ul li:nth-child(1) .fab {
+  color: lightslategrey;
+}
+ul li:nth-child(2){
+  border-color: lightslategrey;
+}
+ul li:nth-child(2) .fab {
+  color: lightslategrey;
+}
+ul li:nth-child(3){
+  border-color: lightslategrey;
+}
+ul li:nth-child(3) .fab {
+  color: lightslategrey;
+}
+ul li:nth-child(4){
+  border-color:  lightslategrey;
+}
+ul li:nth-child(4) .fab {
+  color: lightslategrey;
+}
+ul li:hover:nth-child(1) {
+  background:  lightslategrey;
+}
+ul li:hover:nth-child(2) {
+  background: lightslategrey;
+}
+ul li:hover:nth-child(3) {
+  background:  lightslategrey; 
+}
+ul li:hover:nth-child(4) {
+  background:  lightslategrey;
+}
+ul li .fab:nth-child(1){
+  left: -50%;
+  opacity: 0;
+}
+ul li:hover .fab:nth-child(1){
+  left: -50%;
+  opacity: 1;
+  color: white;
+}
+ul li:hover .fab:nth-child(2){
+  left: 150%;
+  opacity: 0;
+  }
+
+
